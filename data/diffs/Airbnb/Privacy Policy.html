@@ -11,7 +11,7 @@
 <a href="https://github.com/ambanum/OpenTermsArchive-versions/commit/003da3fb819d82d797c5b0172d86ba22cf681ecb">Compare with github's version</a><script>
     {
     document.write('<div id="legende"></div>');
-    fetch("file:///E:/CGU/demo/markdowndiffmain/data/header.html")
+    fetch("../../header.html")
     .then(response => response.text())
     .then( txt => document.getElementById("legende").outerHTML = txt)
     .catch(error => console.error(error))}
