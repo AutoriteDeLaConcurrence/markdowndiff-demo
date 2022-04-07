@@ -1,0 +1,91 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>markdowndiff-demo/data/diffs/SponsorBlock/Privacy Policy</title>
+<link rel="stylesheet" href="../../diffStyle.css">
+<link rel="stylesheet" href="../../markdownStyle.css">
+
+    </head>
+    <body xmlns:diff="http://namespaces.shoobx.com/diff">
+<a href="https://github.com/ambanum/OpenTermsArchive-versions/commit/163158c8eb4386c942d85b036dd6846d347bc19d">Compare with github's version</a><script>
+    {
+    document.write('<div id="legende"></div>');
+    fetch("../../header.html")
+    .then(response => response.text())
+    .then( txt => document.getElementById("legende").outerHTML = txt)
+    .catch(error => console.error(error))}
+    </script><p>SponsorBlock is a browser extention that allows you to submit segments in YouTube videos and fetch segments that other people have submitted.</p>
+<p>Also see <a href="https://gist.github.com/ajayyy/9e8100f069348e0bc062641f34d6af12">the terms of use</a>.</p>
+<p>Almost all data that is collected through this extension can be downloaded from <a href="https://sponsor.ajay.app/database">https://sponsor.ajay.app/database</a>. Some more sensitive data such as votes and <em>hashed</em> IPs are stored in a private database.</p>
+<p>The only things I keep are:</p>
+<ul>
+<li>Information you submit (segments, votes)</li>
+<li>A hashed version of your userID (a randomly generated value assigned when you first install the extension)</li>
+<li>The time the submission happened</li>
+<li>A hashed + salted version of your ip address for ratelimiting. This process makes it close to impossible to retrieve the original value if they don't have access to the salt.</li>
+<li>The name of your client (if using an extension, another port, etc.)</li>
+</ul>
+<p>The extention also optionally logs whenever you skip a segment. This is used to let other users know how much their submissions have helped others (leaderboard). The skip tracking is completely anonymous and can be disabled in settings.</p>
+<p>Each time you browse to a new YouTube video:</p>
+<ul>
+<li>An anonymous request is sent asking for the segments for that video.
+<ul>
+<li>This request contains a <a href="https://github.com/ajayyy/SponsorBlock/wiki/K-Anonymity"><strong>prefix</strong> of the videoID hash</a>, and returns a list of videos that potentially could be the one you are looking for</li>
+<li>This request contains no personally identifiable information and no IPs are logged connected with this request</li>
+</ul>
+</li>
+</ul>
+<p>Each time you skip a segment: IF you have skip tracking enabled:</p>
+<ul>
+<li>An anonymous request is sent with the ID of the segment to record one skip
+<ul>
+<li>This request contains no personally identifiable information and no IPs are logged connected with this request</li>
+</ul>
+</li>
+</ul>
+<p>Each time you vote on a submission:</p>
+<ul>
+<li>A request with your userID and the segment ID is sent
+<ul>
+<li>A hashed IP is stored with this information to help prevent spammers</li>
+</ul>
+</li>
+</ul>
+<p>Each time you submit a segment</p>
+<ul>
+<li>A request with the video ID, your user ID and the submission is sent
+<ul>
+<li>A hashed IP is stored with this information to help prevent spammers</li>
+</ul>
+</li>
+</ul>
+<p>For every request:</p>
+<ul>
+<li>A hashed + salted (salt rotated every 48 hours) IP address is temporarily stored <strong>without</strong> the actual request details
+<ul>
+<li>This allows the stats page to have count the number of users of the API</li>
+<li>This data is stored in a seperate program from the main server and stored in memory. Form more details on how it works, <a href="https://github.com/ajayyy/PrivacyUserCount/#privacy-user-counter">see here</a>
+</li>
+</ul>
+</li>
+</ul>
+<p>This data stays on your device</p>
+<p>Each time you skip a segment:</p>
+<ul>
+<li>A sum is counted of the amount of time you have skipped in total</li>
+</ul>
+<p>Each time you downvote or hide a segment: If you have downvote storage enabled:</p>
+<ul>
+<li>A hash prefix of the videoID is stored locally along with a hash of the segment ID to keep that segment hidden when you watch the video in the future</li>
+</ul>
+<p>Children under 13 are not allowed to use this service without permission from a legal guardian.</p>
+<p>By using this browser extension or API, you hereby consent to the Privacy Policy.</p>
+<p>Please email me with your request.</p>
+<p>The extension uses the YouTube API on the server-side to verify that submissions are for valid videos, and provide information about videos that have been downvoted to moderators. The use of the YouTube API is governed by the <a href="https://policies.google.com/privacy">Google Privacy Policy</a> and the <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a></p>
+<p>While I try to keep it's use to a minimum, I sometimes have to enable Cloudflare proxy to reduce load on the servers. I don't use it most of the time. When it is enabled, it logs some information, such as the<delete> active user</delete><insert> number</insert> and location of connecting<delete> IPs that I cannot disable.</delete><insert> IPs.</insert> More information can be found at <a href="https://www.cloudflare.com/privacypolicy/"> https://www.cloudflare.com/privacypolicy/ </a></p>
+<p>I sometimes need to enable error logging in nginx. This does log IPs associated with<delete> the</delete><insert> connection</insert> errors (not all requests),<delete> which I can't disabled,</delete> but I will delete these logs within 72 hours whenever<delete> they happen.</delete><insert> that is enabled.</insert></p>
+<p>If you have additional questions or require more information, contact me through email at <a href="mailto:dev@ajay.app">dev@ajay.app</a>. You can also ask me questions on Discord (Ajay#1922) or <a href="https://matrix.to/#/@ajay:ajay.app">Matrix</a>.</p>
+</body>
+</html>
+
